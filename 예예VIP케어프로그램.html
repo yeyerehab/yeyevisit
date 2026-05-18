@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>예예 VIP 집중케어 | 3개월 프리미엄 재활 프로그램</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8965A;
+    --gold-light: #D4AF7A;
+    --gold-pale: #F5EDD8;
+    --ink: #1A1714;
+    --ink-soft: #3D3530;
+    --cream: #FAF7F2;
+    --cream-deep: #F0EAE0;
+    --sage: #7A8C7E;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--ink);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 32px;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 30%, rgba(184,150,90,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(184,150,90,0.06) 0%, transparent 60%);
+  }
+
+  .hero-ornament {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--gold));
+    margin: 0 auto 28px;
+    animation: fadeIn 1.2s ease forwards;
+  }
+
+  .hero-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.3;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.5s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 2px;
+    margin-top: 8px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.7s forwards;
+  }
+
+  .hero-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.9s forwards;
+  }
+
+  .hero-divider span {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .hero-divider .diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.65);
+    max-width: 420px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.1s forwards;
+  }
+
+  .hero-price-tag {
+    margin-top: 48px;
+    border: 1px solid rgba(184,150,90,0.4);
+    padding: 20px 40px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.3s forwards;
+  }
+
+  .hero-price-tag::before,
+  .hero-price-tag::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.7;
+  }
+  .hero-price-tag::before { top: -1px; left: -1px; border-width: 1px 0 0 1px; }
+  .hero-price-tag::after { bottom: -1px; right: -1px; border-width: 0 1px 1px 0; }
+
+  .price-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    color: var(--white);
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .price-amount sup {
+    font-size: 18px;
+    vertical-align: super;
+    color: var(--gold-light);
+  }
+
+  .price-period {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+
+  /* ── PHILOSOPHY ── */
+  .section {
+    padding: 80px 32px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .section-tag::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .section-heading {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    color: var(--ink);
+  }
+
+  .section-heading em {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.15em;
+  }
+
+  .section-body {
+    font-size: 15px;
+    line-height: 2;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .section-body p + p {
+    margin-top: 16px;
+  }
+
+  /* ── QUOTE BLOCK ── */
+  .quote-block {
+    background: var(--ink);
+    padding: 56px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .quote-block::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.3;
+    line-height: 0.5;
+    margin-bottom: 20px;
+  }
+
+  .quote-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(16px, 3vw, 22px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.8;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .quote-text em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  /* ── SCIENCE STRIP ── */
+  .science-strip {
+    background: var(--cream-deep);
+    padding: 48px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(184,150,90,0.2);
+    border-bottom: 1px solid rgba(184,150,90,0.2);
+  }
+
+  .science-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .science-unit {
+    font-size: 14px;
+    color: var(--ink-soft);
+    letter-spacing: 2px;
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+
+  .science-desc {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    max-width: 400px;
+    margin: 0 auto;
+    font-weight: 300;
+  }
+
+  /* ── TEAM SECTION ── */
+  .team-section {
+    padding: 80px 32px;
+    background: var(--white);
+  }
+
+  .team-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .team-grid {
+    display: grid;
+    gap: 2px;
+    margin-top: 40px;
+  }
+
+  .team-row {
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+  }
+
+  .team-card {
+    flex: 1;
+    padding: 28px 24px;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .team-card.featured {
+    background: var(--ink);
+    color: var(--white);
+  }
+
+  .team-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .team-role {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+
+  .team-name {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: inherit;
+    margin-bottom: 8px;
+  }
+
+  .team-card.featured .team-name { color: var(--white); }
+
+  .team-detail {
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .team-card.featured .team-detail { color: rgba(255,255,255,0.6); }
+
+  /* ── PROGRAM STRUCTURE ── */
+  .program-section {
+    padding: 80px 32px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .program-month {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 0 24px;
+    margin-top: 40px;
+  }
+
+  .month-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    padding-top: 4px;
+    grid-row: span 2;
+    text-align: right;
+  }
+
+  .month-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--sage);
+    text-transform: uppercase;
+    padding-top: 8px;
+  }
+
+  .month-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 4px 0 10px;
+  }
+
+  .month-items {
+    list-style: none;
+    border-left: 1px solid rgba(184,150,90,0.3);
+    padding-left: 16px;
+    margin-bottom: 40px;
+  }
+
+  .month-items li {
+    font-size: 13px;
+    line-height: 2;
+    color: var(--ink-soft);
+    font-weight: 300;
+    position: relative;
+  }
+
+  .month-items li::before {
+    content: '—';
+    color: var(--gold);
+    margin-right: 8px;
+    font-size: 10px;
+  }
+
+  /* ── DELIVERABLES ── */
+  .deliverables {
+    background: var(--ink);
+    padding: 80px 32px;
+  }
+
+  .deliverables-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .deliverables .section-heading {
+    color: var(--white);
+  }
+
+  .deliver-list {
+    margin-top: 40px;
+    display: grid;
+    gap: 1px;
+  }
+
+  .deliver-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .deliver-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 300;
+    min-width: 32px;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .deliver-content {}
+
+  .deliver-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 6px;
+  }
+
+  .deliver-desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.5);
+    font-weight: 300;
+  }
+
+  /* ── FOR WHOM ── */
+  .target-section {
+    padding: 80px 32px;
+    background: var(--cream-deep);
+  }
+
+  .target-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .target-cards {
+    display: grid;
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .target-card {
+    background: var(--white);
+    padding: 24px 28px;
+    border-left: 3px solid var(--gold);
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .target-card-icon {
+    font-size: 20px;
+    min-width: 28px;
+    margin-top: 2px;
+  }
+
+  .target-card-text {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    font-weight: 300;
+  }
+
+  .target-card-text strong {
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+  }
+
+  /* ── PROMISE ── */
+  .promise-section {
+    padding: 80px 32px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .promise-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 40px 0 32px;
+  }
+
+  .promise-ornament span {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold));
+  }
+
+  .promise-ornament span:last-child {
+    background: linear-gradient(to left, transparent, var(--gold));
+  }
+
+  .promise-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(18px, 3vw, 24px);
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+
+  .promise-text em {
+    font-style: italic;
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2em;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--ink);
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+  }
+
+  .cta-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .cta-brand {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 40px;
+  }
+
+  .cta-notice {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 2;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    padding: 16px 48px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+  }
+
+  .cta-btn:hover {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  .cta-info {
+    margin-top: 32px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    line-height: 2;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #111;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .footer-line {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+    opacity: 0.4;
+  }
+
+  .footer-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile tweaks */
+  @media (max-width: 480px) {
+    .team-row { flex-direction: column; }
+    .hero-price-tag { padding: 16px 28px; }
+    .program-month { grid-template-columns: 48px 1fr; gap: 0 16px; }
+    .month-number { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ornament"></div>
+  <p class="hero-badge">YES禮 예예방문운동 · Exclusive Program</p>
+  <h1 class="hero-title">잃어버린 일상을<br><em>되찾는 90일</em></h1>
+  <p class="hero-subtitle">VIP 집중 재활 케어 프로그램</p>
+  <div class="hero-divider">
+    <span></span><div class="diamond"></div><span></span>
+  </div>
+  <p class="hero-desc">
+    퇴원 이후, 진짜 회복은 집에서 시작됩니다.<br>
+    19년 경력의 전문가 팀이 세 달 동안<br>
+    삶의 자리로 돌아오는 여정을 함께합니다.
+  </p>
+  <div class="hero-price-tag">
+    <span class="price-label">3개월 집중케어 패키지</span>
+    <div class="price-amount"><sup>₩</sup>500<span style="font-size:24px;color:rgba(255,255,255,0.4)">만원</span></div>
+    <p class="price-period">월 80분 × 20회 기준 · 팀 전문가 방문 포함</p>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="section">
+  <div class="section-tag reveal">Philosophy</div>
+  <h2 class="section-heading reveal">
+    회복은 병원에서 끝나지 않습니다.<br>
+    진짜 삶은 <em>집에서 시작</em>됩니다.
+  </h2>
+  <div class="section-body reveal">
+    <p>
+      퇴원은 끝이 아니라 시작입니다. 그러나 많은 분들이 퇴원 이후 막막함과 마주합니다.
+      다시 걸을 수 있을까, 예전처럼 살 수 있을까—
+      그 불안 앞에 저희가 먼저 찾아가겠습니다.
+    </p>
+    <p>
+      예예 VIP 케어는 단순한 재활이 아닙니다.
+      가정환경을 함께 수정하고, 일상의 동선을 다시 설계하고,
+      뇌와 몸이 새로운 움직임을 익힐 때까지
+      전문가 팀이 곁에 머뭅니다.
+    </p>
+    <p>
+      이것은 치료가 아니라 <strong>삶으로의 복귀를 위한 투자</strong>입니다.
+    </p>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-block">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">
+    뇌가소성은 반복 속에서 피어납니다.<br>
+    <em>60일의 집중</em>이 평생의 움직임을 바꿉니다.<br>
+    저희는 그 시간 동안 포기하지 않겠습니다.
+  </p>
+</div>
+
+<!-- SCIENCE STRIP -->
+<div class="science-strip">
+  <div class="science-number reveal">90</div>
+  <p class="science-unit reveal">DAYS · 뇌가소성의 황금기</p>
+  <p class="science-desc reveal">
+    뇌과학 연구에 따르면 신경 가소성은 반복적 자극이 지속될 때 극대화됩니다.
+    급성기 이후 60~90일은 기능 회복의 결정적 시간입니다.
+    이 황금기를 놓치지 않기 위해 저희 팀은 처음부터 끝까지 함께합니다.
+  </p>
+</div>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-inner">
+    <div class="section-tag reveal">Expert Team</div>
+    <h2 class="section-heading reveal">한 분을 위한<br>다섯 명의 전문가</h2>
+    <p class="section-body reveal">모든 팀은 고객 한 분의 상태에 맞게 구성됩니다.<br>획일화된 케어가 아닌, 맞춤 편성된 전문가 팀입니다.</p>
+
+    <div class="team-grid reveal">
+      <!-- 총괄 -->
+      <div class="team-row">
+        <div class="team-card featured">
+          <span class="team-icon">🧑‍⚕️</span>
+          <p class="team-role">총괄 디렉터</p>
+          <p class="team-name">물리치료사 박수호</p>
+          <p class="team-detail">연세대 인간공학치료학 석사<br>보바스기념병원 출신 · 19년 경력<br>주 2~3회 직접 방문, 전체 케어 총괄</p>
+        </div>
+      </div>
+      <!-- 전문가들 -->
+      <div class="team-row">
+        <div class="team-card">
+          <span class="team-icon">🦴</span>
+          <p class="team-role">근골격 전문</p>
+          <p class="team-name">정형외과 도수치료사</p>
+          <p class="team-detail">통증 완화 및<br>관절·근육 기능 회복</p>
+        </div>
+        <div class="team-card">
+          <span class="team-icon">🧠</span>
+          <p class="team-role">인지·연하 전문</p>
+          <p class="team-name">작업치료사</p>
+          <p class="team-detail">인지 기능 및<br>삼킴 재활 집중 관리</p>
+        </div>
+      </div>
+      <div class="team-row">
+        <div class="team-card">
+          <span class="team-icon">🤸</span>
+          <p class="team-role">체형·균형 전문</p>
+          <p class="team-name">필라테스 강사</p>
+          <p class="team-detail">코어 강화 및<br>자세 교정·균형 훈련</p>
+        </div>
+        <div class="team-card">
+          <span class="team-icon">💪</span>
+          <p class="team-role">체력·기능 전문</p>
+          <p class="team-name">재활 트레이너</p>
+          <p class="team-detail">근력 회복 및<br>일상 활동 기능 향상</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM STRUCTURE -->
+<section class="program-section">
+  <div class="section-tag reveal">Program</div>
+  <h2 class="section-heading reveal">3개월 회복 로드맵</h2>
+
+  <div class="program-month reveal">
+    <div class="month-number">1</div>
+    <div>
+      <p class="month-label">Month One</p>
+      <p class="month-title">평가 · 환경 설계 · 신뢰 형성</p>
+    </div>
+    <ul class="month-items">
+      <li>정밀 신체 기능 평가 (근력·균형·보행·인지)</li>
+      <li>가정 환경 수정 및 낙상 위험 동선 재설계</li>
+      <li>개인 맞춤 운동 처방 수립</li>
+      <li>팀 전문가 배치 및 첫 방문 시작</li>
+      <li>초기 주간 리포트 발송</li>
+    </ul>
+  </div>
+
+  <div class="program-month reveal">
+    <div class="month-number">2</div>
+    <div>
+      <p class="month-label">Month Two</p>
+      <p class="month-title">집중 자극 · 패턴 형성</p>
+    </div>
+    <ul class="month-items">
+      <li>뇌가소성 극대화 집중 운동 기간</li>
+      <li>일상 동작 반복 훈련 (식사·보행·위생 관리)</li>
+      <li>팀 교차 방문으로 다각도 자극 제공</li>
+      <li>보호자 교육 및 자가 운동 처방 심화</li>
+      <li>중간 기능 평가 및 계획 조정</li>
+    </ul>
+  </div>
+
+  <div class="program-month reveal">
+    <div class="month-number">3</div>
+    <div>
+      <p class="month-label">Month Three</p>
+      <p class="month-title">안정화 · 자립 준비 · 마무리</p>
+    </div>
+    <ul class="month-items">
+      <li>독립적 일상 수행 능력 강화</li>
+      <li>자가 관리 루틴 확립</li>
+      <li>최종 기능 평가 및 3개월 변화 기록</li>
+      <li>이후 유지 관리 계획 수립</li>
+      <li>월간 종합 케어 리포트 제공</li>
+    </ul>
+  </div>
+</section>
+
+<!-- DELIVERABLES -->
+<section class="deliverables">
+  <div class="deliverables-inner">
+    <div class="section-tag reveal" style="color:var(--gold)">What You Receive</div>
+    <h2 class="section-heading reveal" style="color:var(--white)">프로그램에 포함된 것들</h2>
+
+    <div class="deliver-list">
+      <div class="deliver-item reveal">
+        <div class="deliver-num">01</div>
+        <div class="deliver-content">
+          <p class="deliver-title">전문가 팀 통합 방문 월 20회 · 회당 80분</p>
+          <p class="deliver-desc">총괄 물리치료사(주 2~3회)와 도수치료사·작업치료사·필라테스·트레이너가 합산 월 20회 방문합니다. 고객의 회복 단계에 따라 전문가 배분을 유동적으로 조정합니다.</p>
+        </div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-num">02</div>
+        <div class="deliver-content">
+          <p class="deliver-title">24시간 긴급 상담 채널</p>
+          <p class="deliver-desc">언제든 컨디션 변화나 응급 상황 발생 시 즉시 연락이 가능합니다.</p>
+        </div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-num">03</div>
+        <div class="deliver-content">
+          <p class="deliver-title">주간 케어 리포트 + 월간 종합 리포트</p>
+          <p class="deliver-desc">변화를 수치와 기록으로 정리하여 보호자와 함께 공유합니다.</p>
+        </div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-num">04</div>
+        <div class="deliver-content">
+          <p class="deliver-title">가정 환경 수정 컨설팅</p>
+          <p class="deliver-desc">낙상 위험 동선 파악 및 안전한 생활 환경 설계를 함께 진행합니다.</p>
+        </div>
+      </div>
+      <div class="deliver-item reveal">
+        <div class="deliver-num">05</div>
+        <div class="deliver-content">
+          <p class="deliver-title">보호자 교육 및 자가 운동 처방</p>
+          <p class="deliver-desc">방문 외 시간에도 지속적인 회복이 가능하도록 체계적으로 안내합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="target-section">
+  <div class="target-inner">
+    <div class="section-tag reveal">For Whom</div>
+    <h2 class="section-heading reveal">이런 분께 권합니다</h2>
+
+    <div class="target-cards">
+      <div class="target-card reveal">
+        <span class="target-card-icon">🏥</span>
+        <div class="target-card-text">
+          <strong>급성기 퇴원 직후</strong>
+          뇌졸중·골절·수술 후 퇴원했지만 전문 재활이 이어지지 않는 분
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-card-icon">🧓</span>
+        <div class="target-card-text">
+          <strong>낙상 이후 자신감을 잃은 어르신</strong>
+          넘어진 경험 이후 외출과 보행 자체를 두려워하게 된 분
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-card-icon">🧠</span>
+        <div class="target-card-text">
+          <strong>신경계 질환 (뇌졸중·파킨슨) 만성기</strong>
+          병원 치료는 끝났지만 일상 기능이 여전히 불편한 분
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-card-icon">👨‍👩‍👧</span>
+        <div class="target-card-text">
+          <strong>장기 간병으로 지친 가족</strong>
+          전문가 팀에게 케어를 맡기고 보호자도 함께 쉬고 싶은 가정
+        </div>
+      </div>
+      <div class="target-card reveal">
+        <span class="target-card-icon">💎</span>
+        <div class="target-card-text">
+          <strong>최상의 회복을 원하시는 분</strong>
+          시간과 비용보다 결과의 질을 중요하게 생각하시는 분
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise-section">
+  <div class="section-tag reveal" style="justify-content:center">Our Promise</div>
+  <h2 class="section-heading reveal" style="text-align:center">예예의 약속</h2>
+  <div class="promise-ornament reveal">
+    <span></span>
+    <div class="diamond" style="width:6px;height:6px;background:var(--gold);transform:rotate(45deg)"></div>
+    <span></span>
+  </div>
+  <p class="promise-text reveal">
+    저는 19년 동안 단 한 가지만 생각했습니다.<br>
+    <em>이 분이 다시 일어설 수 있을까.</em><br><br>
+    저희 팀은 기술을 팔지 않습니다.<br>
+    <em>회복의 가능성</em>을 함께 열어갑니다.<br><br>
+    3개월 후, 달라진 일상이<br>
+    저희의 보답이 될 것입니다.
+  </p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <p class="cta-logo">YES禮</p>
+  <p class="cta-brand">예예방문운동 VIP 케어</p>
+  <p class="cta-notice">
+    월 5~6팀 한정으로 운영됩니다.<br>
+    충분한 집중을 위해 정원을 엄격히 유지합니다.<br><br>
+    소개 및 문의는 아래로 연락 주세요.
+  </p>
+  <a href="tel:010-6512-2014" class="cta-btn">📞 상담 문의하기</a>
+  <p class="cta-info">
+    010-6512-2014<br>
+    물리치료사 박수호<br>
+    연세대학교 인간공학치료학 석사 · 보바스기념병원 출신
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-line"></div>
+  <p class="footer-text">
+    YES禮 예예방문운동 · 대표 박수호<br>
+    © 2025 Yeye Visiting Rehabilitation. All rights reserved.
+  </p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
